@@ -1,0 +1,31 @@
+/* styles.css */
+.language-map-info {
+    width: 650px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 auto; /* Centra horizontalmente */
+  }
+  
+  .language-map-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .language-map-info .subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .language-map-info .Mapa{
+    display: flex;
+    justify-content: center;
+    height: 500px;
+  }
+  
+  .language-map-info img {
+    max-width: 550px;
+    height: auto;  
+  }

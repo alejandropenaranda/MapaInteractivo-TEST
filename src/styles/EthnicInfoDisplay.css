@@ -1,0 +1,35 @@
+  .ethnic-info-display {
+    width: 100%;
+    background-color: #EBEBEB;
+    padding: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+  }
+  
+  .ethnic-info-display p {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    text-align: justify;
+  }
+  
+  .ethnic-info-display .button-container-EID {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .button-container-EID button {
+    font-family: "Lato", sans-serif;
+    margin-left: 5px;
+    padding: 5px 10px;
+    background-color: #F39E46;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .button-container-EID button:hover {
+    background-color: #bd7c36;
+  }

@@ -1,0 +1,47 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+  .language-names {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #F39E46;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 100%; /* Ajusta el ancho según sea necesario */
+    text-align: left;
+    height: 550px;
+  }
+  
+  .language-names h2 {
+    color: #F39E46;
+    font-size: 1.5rem;
+    align-self: center;
+  }
+  
+  .language-names .table {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto; /* Permite el scroll vertical */
+  }
+  
+  .language-names .row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .language-names .title {
+    font-weight: bold;
+    width: 35%;
+    text-align: justify;
+  }
+  
+  .language-names .content {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }

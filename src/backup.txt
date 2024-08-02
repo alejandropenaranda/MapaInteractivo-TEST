@@ -1,0 +1,120 @@
+import React, { useState } from 'react';
+import DataLoader from './components/DataLoader';
+import EthnicSelector from './components/EthnicSelector';
+import LanguageNames from './components/LanguageNames';
+import SpeakersCount from './components/SpeakersCount';
+import EthnicMythology from './components/EthnicMythology';
+import CommentsCitations from './components/CommentsCitations';
+import LanguageMapInfo from './components/LanguageMapInfo';
+import EthnicInfoViewer from './components/EthnicInfoViewer';
+import EthnicInteractiveMap from './components/EthnicInteractiveMap';
+import './styles/App.css';
+
+interface EthnicGroup {
+  name: string;
+  nombreBase?: string;
+  nombrePueblo?: string;
+  nombreLengua?: string;
+  hablantes?: string;
+  mitologia?: string;
+  comentarios?: string;
+  ubicaciones?: string;
+  coords?: string;
+  linkMapa?: string;
+  enlace1?: string;
+  enlace2?: string;
+  enlace3?: string;
+  enlace4?: string;
+  enlace5?: string;
+  enlace6?: string;
+  enlace7?: string;
+  // [key: string]: any;
+}
+
+const App: React.FC = () => {
+  const [data, setData] = useState<{ [name: string]: EthnicGroup[] }>({});
+  const [selectedEthnicGroup, setSelectedEthnicGroup] = useState<string | null>(null);
+  const [viewerUrl, setViewerUrl] = useState<string | undefined>(undefined);
+  const [referenceStatus, setReferenceStatus] = useState<boolean>(true);
+
+  const selectedEthnicGroupData = selectedEthnicGroup ? data[selectedEthnicGroup] : [];
+
+  const handleSetViewerUrl = (url: string | undefined) => {
+    setViewerUrl(url);
+    setReferenceStatus(true); // Mostrar la referencia cuando se establece una nueva URL
+  };
+
+  const handleSetReferenceStatus = (visible: boolean | undefined) => {
+    if (visible !== undefined) {
+      setReferenceStatus(visible);
+    }
+  };
+
+  return (
+    <div className="app-container">
+      <div className="header">
+        <h1>MAPA INTERACTIVO DE LENGUAS</h1>
+        <p>En el Vaupés se hablan veinticinco (25) lenguas: 15 de la familia Tucano Oriental, 5 de la familia Arawák, 2 de la familia Nadahup, 1 de la subfamilia Kakua-Nukak, 1 de la familia Caribe, 1 de la familia Tupí.</p>
+      </div>
+      {/* <div className="map-container">
+        <EthnicInteractiveMap/>
+      </div> */}
+      <div className="content-container">
+        <div className="column-left">
+          <DataLoader setData={setData} />
+          <EthnicSelector data={Object.keys(data)} setSelectedEthnicGroup={setSelectedEthnicGroup} />
+          {/* {selectedEthnicGroupData.length > 0 && (
+            <> */}
+              {/* <div className="button-container">
+
+              </div> */}
+              <LanguageNames data={selectedEthnicGroupData.map(item => ({
+                nombreBase: item.nombreBase ?? '',
+                enlace1: item.enlace1 ?? '',
+                nombrePueblo: item.nombrePueblo ?? '',
+                enlace2: item.enlace2 ?? '',
+                nombreLengua: item.nombreLengua ?? '',
+                enlace3: item.enlace3 ?? '',
+                setViewerUrl: handleSetViewerUrl,
+                setReferenceStatus: handleSetReferenceStatus,
+              }))} />
+              <SpeakersCount data={selectedEthnicGroupData.map(item => ({
+                hablantes: item.hablantes ?? '',
+                enlace4: item.enlace4 ?? '',
+                setViewerUrl: handleSetViewerUrl,
+                setReferenceStatus: handleSetReferenceStatus,
+              }))} />
+              <EthnicMythology data={selectedEthnicGroupData.map(item => ({
+                mitologia: item.mitologia ?? '',
+                enlace5: item.enlace5 ?? '',
+                setViewerUrl: handleSetViewerUrl,
+                setReferenceStatus: handleSetReferenceStatus,
+              }))} />
+              <CommentsCitations data={selectedEthnicGroupData.map(item => ({
+                comentarios: item.comentarios ?? '',
+                enlace6: item.enlace6 ?? '',
+                setViewerUrl: handleSetViewerUrl,
+                setReferenceStatus: handleSetReferenceStatus,
+              }))} />
+              {/* </>
+            )} */}
+        </div>
+        <div className="column-right">
+          <EthnicInfoViewer initialUrl={viewerUrl} status={referenceStatus} setReferenceStatus = {handleSetReferenceStatus}  />
+          {/* {selectedEthnicGroupData.length > 0 && ( */}
+            <LanguageMapInfo data={selectedEthnicGroupData.map(item => ({
+              ubicaciones: item.ubicaciones ?? '',
+              coords: item.coords ?? '',
+              enlace7: item.enlace7 ?? '',
+              linkMapa: item.linkMapa ?? '',
+              setViewerUrl: handleSetViewerUrl,
+              setReferenceStatus: handleSetReferenceStatus,
+            }))} />
+          {/* )} */}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default App;
