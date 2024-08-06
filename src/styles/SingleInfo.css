@@ -30,4 +30,31 @@
     gap: 10px;
     margin-right: 30px;
     overflow-y: auto; 
+    padding-right: 10px;
   }
+
+/* Estilos para el scrollbar */
+.single-info .content::-webkit-scrollbar {
+  width: 12px; /* Ancho del scrollbar */
+}
+
+.single-info .content::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color del fondo del track */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.single-info .content::-webkit-scrollbar-thumb {
+  background: #888; /* Color de la barra del scrollbar */
+  border-radius: 10px; /* Bordes redondeados */
+  border: 3px solid #f1f1f1; /* Espacio entre la barra y el track */
+}
+
+.single-info .content::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color de la barra al pasar el ratón */
+}
+
+/* Estilos para eliminar las flechitas */
+.single-info .content::-webkit-scrollbar-button {
+  display: none;
+}
+

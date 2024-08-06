@@ -1,6 +1,45 @@
 *, *::before, *::after {
   box-sizing: border-box;
 }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  overflow-y: auto;
+  scroll-behavior: smooth; /* Para un desplazamiento suave */
+}
+
+/* Estilos para el scrollbar */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 12px; /* Ancho del scrollbar */
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color del fondo del track */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background: #888; /* Color de la barra del scrollbar */
+  border-radius: 10px; /* Bordes redondeados */
+  border: 3px solid #f1f1f1; /* Espacio entre la barra y el track */
+}
+
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color de la barra al pasar el ratón */
+}
+
+/* Estilos para eliminar las flechitas */
+html::-webkit-scrollbar-button,
+body::-webkit-scrollbar-button {
+  display: none;
+}
+
 .app-container {
     display: flex;
     flex-direction: column;
