@@ -22,14 +22,21 @@ const EthnicInfoDisplay: React.FC<EthnicInfoDisplayProps> = ({ content, link, se
   };
 
   const handleCopyClick = () => {
-    navigator.clipboard.writeText(content).then(() => {
+    const textArea = document.createElement("textarea");
+    textArea.value = content;
+    document.body.appendChild(textArea);
+    textArea.select();
+    try {
+      document.execCommand('copy');
       setCopyMessageVisible(true);
       setTimeout(() => {
         setCopyMessageVisible(false);
       }, 3000); // Oculta el mensaje después de 2 segundos
-    }).catch(err => {
+    } catch (err) {
       console.error('Error al copiar al portapapeles: ', err);
-    });
+    } finally {
+      document.body.removeChild(textArea);
+    }
   };
 
   return (
