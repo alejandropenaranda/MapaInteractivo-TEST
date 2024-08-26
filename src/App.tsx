@@ -109,7 +109,7 @@ const App: React.FC = () => {
           enlace: item.enlace5 ?? '',
           setViewerUrl: handleSetViewerUrl,
           setReferenceStatus: handleSetReferenceStatus,
-        }))} texto="¿Cuáles son las mitologías y leyendas esenciales de este pueblo según algunos estudios?" />;
+        }))} texto="¿Cuáles son algunas de las mitologías y leyendas conocidas de este pueblo según algunos estudios?" />;
 
       case 'Más info':
         return <ShowData data={selectedEthnicGroupData.map(item => ({
@@ -152,11 +152,11 @@ const App: React.FC = () => {
           {['Nombre Exógeno', 'Nombre del pueblo', 'Nombre de la Lengua', 'Ubicación', 'Número de hablantes', 'Mitología', 'Más info'].map((buttonName) => (
             <IconButton
               key={buttonName}
-              activeIcon={<img src={buttonIcons[buttonName].active} alt="example" />}// Reemplaza el emoji con tu icono preferido
+              activeIcon={<img src={buttonIcons[buttonName].active} alt="example" />}
               inactiveIcon={<img src={buttonIcons[buttonName].inactive} alt="example" />}
               text={buttonName}
               onClick={() => setActiveComponent(buttonName)}
-              isActive={activeComponent === buttonName} // Verifica si este botón es el activo
+              isActive={activeComponent === buttonName}
             />
           ))}
         </div>

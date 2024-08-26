@@ -24,7 +24,7 @@ const EthnicInfoViewer: React.FC<EthnicInfoViewerProps> = ({ initialUrl }) => {
     <div>
       <div className="ethnic-info-viewer">
         <div className="title-container">
-          <h2>Repositorio</h2>
+          <h2>Fuentes bibliográficas en el repositorio</h2>
         </div>  
         <div className="iframe-container">
           <iframe
