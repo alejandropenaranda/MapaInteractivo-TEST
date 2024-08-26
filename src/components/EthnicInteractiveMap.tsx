@@ -32,7 +32,6 @@ const createClusterCustomIcon = function (cluster: any) {
 };
 
 const EthnicInteractiveMap: React.FC<EthnicInteractiveMapProps> = ({ markers }) => {
-  console.log(markers)
   return (
     <MapContainer center={[1.252302645176641, -70.23357464338513]} zoom={13} style={{ height: '100%', width: '100%' }}>
       <TileLayer

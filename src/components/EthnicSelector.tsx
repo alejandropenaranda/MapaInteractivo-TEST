@@ -9,12 +9,10 @@ interface EthnicSelectorProps {
 const EthnicSelector: React.FC<EthnicSelectorProps> = ({ data, setSelectedEthnicGroup }) => {
   return (
     <div className="ethnic-selector-container">
-      <div className="label-container">
+
         <label htmlFor="ethnicSelector" className="ethnic-selector-label">
-          Selector de Lenguas
+          Selecciona una lengua:
         </label>
-      </div>
-      <div className="selector-container">
         <select
           id="ethnicSelector"
           className="ethnic-selector-dropdown"
@@ -30,7 +28,6 @@ const EthnicSelector: React.FC<EthnicSelectorProps> = ({ data, setSelectedEthnic
             </option>
           ))}
         </select>
-      </div>
     </div>
   );
 };

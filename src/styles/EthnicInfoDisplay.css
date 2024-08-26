@@ -1,6 +1,7 @@
   .ethnic-info-display {
     width: 100%;
-    background-color: #EBEBEB;
+    background-color: #ffffff;
+    opacity: 0.87;
     padding: 15px;
     position: relative;
     display: flex;
@@ -23,8 +24,8 @@
     font-family: "Lato", sans-serif;
     margin-left: 5px;
     padding: 5px 10px;
-    background-color: #F39E46;
-    color: black;
+    background-color: #F0AF43;
+    color: rgb(255, 255, 255);
     border: none;
     border-radius: 20px;
     cursor: pointer;
@@ -41,13 +42,13 @@
   
   .copy-message {
     margin-right: 10px;
-    color: green;
+    color: #91AD2E;
     font-size: 0.9rem;
-    animation: fadeOut 3s forwards;
+    animation: fadeOut 2s forwards;
   }
   
   @keyframes fadeOut {
-    0% {
+    50%{
       opacity: 1;
     }
     100% {

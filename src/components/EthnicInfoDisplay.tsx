@@ -31,7 +31,7 @@ const EthnicInfoDisplay: React.FC<EthnicInfoDisplayProps> = ({ content, link, se
       setCopyMessageVisible(true);
       setTimeout(() => {
         setCopyMessageVisible(false);
-      }, 3000); // Oculta el mensaje después de 2 segundos
+      }, 2000); // Oculta el mensaje después de 2 segundos
     } catch (err) {
       console.error('Error al copiar al portapapeles: ', err);
     } finally {

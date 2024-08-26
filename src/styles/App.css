@@ -51,18 +51,32 @@ body::-webkit-scrollbar-button {
   
   .content-container {
     display: flex;
+    flex-direction: column;
     max-width: 1300px;
     width: 100%;
     justify-content: center; /* Centra horizontalmente */
-    gap: 20px; /* Espacio entre las columnas */
+    gap: 10px; /* Espacio entre las columnas */
   }
 
-  .footer-container{
+  .footer-container {
     max-width: 1300px;
     width: 100%;
-    justify-content: center; /* Centra horizontalmente */
-    gap: 20px; /* Espacio entre las columnas */
-    text-align: justify;
+    height: 225px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #1D3C80;
+    padding: 20px;
+}
+
+  .footer-container p{
+    font-family: Lato;
+    font-weight: 400;
+    font-style: italic;
+    color: #FFFFFF;
+    text-align: center;
   }
 
   .map-container {
@@ -95,25 +109,32 @@ body::-webkit-scrollbar-button {
     font-size: 1.2rem;
     color: #666;
   }
-  
-  .column-left {
-    flex: 1;
-    padding: 10px; /* Ajuste el espaciado derecho según necesidad */
-    max-width: 650px;    
+
+  h2 {
+    margin-top: 0px;
+    font-size: 30px;
+    align-self: left;
+    text-align: left;
+    color:#F0AF43;
+    padding-left: 0%;
+    font-weight: 800;
+    font-family: Lato;
+    margin-bottom: 10px;
   }
 
-  .column-left .button-container{
+  p{
+    font-family: Lato;
+    font-weight: 400;
+    font-size: 16px;
+    color: #656565;
+  }
+  
+  .button-container{
     display: flex;
     margin: 10px;
     width: 100%;
     justify-content: center;
-    gap: 5px;
-  }
-  
-  .column-right {
-    flex:2;
-    padding: 10px;
-    max-width: 650px;  
+    gap: 25px;
   }
 
   .button-container button {
@@ -141,17 +162,6 @@ body::-webkit-scrollbar-button {
 @media (max-width: 1150px) {
   .content-container {
     flex-direction: column;
-    align-items: center; /* Centra el contenido en pantallas pequeñas */
-  }
-
-  
-  .column-left, .column-right {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .column-left {
-    margin-bottom: 0px;
   }
 
   .map-container {
@@ -173,14 +183,9 @@ body::-webkit-scrollbar-button {
   }
 
   .button-container {
-    flex-direction: column; /* Coloca los botones en una columna */
     gap: 10px; /* Añade espacio entre los botones en columna */
   }
-  .button-container button {
-    font-size: 0.9rem; /* Ajusta el tamaño de los botones */
-    /* padding: 8px 12px; Reduce el padding para pantallas pequeñas */
-    width: 100%;
-  }
+
 }
 
 @media (max-width: 480px) {
@@ -197,8 +202,7 @@ body::-webkit-scrollbar-button {
   }
 
   .button-container {
-    flex-direction: column; /* Coloca los botones en una columna */
-    gap: 10px; /* Añade espacio entre los botones en columna */
+    gap: 5px; /* Añade espacio entre los botones en columna */
   }
 
   .button-container button {
