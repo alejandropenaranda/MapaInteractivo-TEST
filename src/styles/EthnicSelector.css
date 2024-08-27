@@ -11,8 +11,9 @@
     font-weight: 800;
     font-family: Lato;
     font-size: 30px;
-    padding-right: 20px;
+    padding-right: 10px;
     color: #F0AF43;
+    width: 330px;
   }
 
   .ethnic-selector-dropdown {
@@ -25,4 +26,27 @@
     border: 2px solid #91AD2E;
     color: #91AD2E;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+
+  @media (max-width: 1150px) {
+    .ethnic-selector-container {
+      width: 100%; 
+    }
+  }
+
+  @media (max-width: 768px) {
+    .ethnic-selector-container {
+      margin: 10px;
+      width: 100%; 
+      flex-direction: column;
+    }
+
+    .ethnic-selector-label {
+      margin-bottom: 10px;
+    }
+
+    .ethnic-selector-dropdown {
+      width: 100%; 
+    }
   }

@@ -7,8 +7,20 @@ import ShowData from './components/ShowData';
 import IconButton from './components/IconButton';
 import './styles/App.css';
 import { LatLngTuple } from 'leaflet';
-import exIcon from './assets/icons/choza.svg'
-import exIcon2 from './assets/icons/masinfo.svg'
+import masInfo from './assets/icons/MásInfoActive.svg'
+import masInfoI from './assets/icons/MásInfoInactive.svg'
+import nombreEx from './assets/icons/NombreExoActive.svg'
+import nombreExI from './assets/icons/NombreExoInactive.svg'
+import nombreLa from './assets/icons/NombreLengActive.svg'
+import nombreLaI from './assets/icons/NombreLengInactive.svg'
+import nombrePo from './assets/icons/NombrePueActive.svg'
+import nombrePoI from './assets/icons/NombrePueInactive.svg'
+import numeroHa from './assets/icons/NumHabActive.svg'
+import numeroHaI from './assets/icons/NumHabInative.svg'
+import mitologia from './assets/icons/MitologíaActive.svg'
+import mitologiaI from './assets/icons/MitologíaInactive.svg'
+import ubicacion from './assets/icons/UbicaciónActive.svg'
+import ubicacionI from './assets/icons/UbicaciónInactive.svg'
 
 interface EthnicGroup {
   name: string;
@@ -129,13 +141,13 @@ const App: React.FC = () => {
     };
   }
   const buttonIcons: ButtonIcons = {
-    'Nombre Exógeno': { active: exIcon, inactive: exIcon2 },
-    'Nombre del pueblo': { active: exIcon, inactive: exIcon2 },
-    'Nombre de la Lengua': { active: exIcon, inactive: exIcon2 },
-    'Ubicación': { active: exIcon, inactive: exIcon2 },
-    'Número de hablantes': { active: exIcon, inactive: exIcon2 },
-    'Mitología': { active: exIcon, inactive: exIcon2 },
-    'Más info': { active: exIcon, inactive: exIcon2 }
+    'Nombre Exógeno': { active: nombreEx, inactive: nombreExI },
+    'Nombre del pueblo': { active: nombrePo, inactive: nombrePoI },
+    'Nombre de la Lengua': { active: nombreLa, inactive: nombreLaI },
+    'Ubicación': { active: ubicacion, inactive: ubicacionI },
+    'Número de hablantes': { active: numeroHa, inactive: numeroHaI },
+    'Mitología': { active: mitologia , inactive: mitologiaI },
+    'Más info': { active: masInfo, inactive: masInfoI }
   }
 
   return (
@@ -152,11 +164,11 @@ const App: React.FC = () => {
           {['Nombre Exógeno', 'Nombre del pueblo', 'Nombre de la Lengua', 'Ubicación', 'Número de hablantes', 'Mitología', 'Más info'].map((buttonName) => (
             <IconButton
               key={buttonName}
-              activeIcon={<img src={buttonIcons[buttonName].active} alt="example" />}
+              activeIcon={<img src={buttonIcons[buttonName].active} alt="example" />}// Reemplaza el emoji con tu icono preferido
               inactiveIcon={<img src={buttonIcons[buttonName].inactive} alt="example" />}
               text={buttonName}
               onClick={() => setActiveComponent(buttonName)}
-              isActive={activeComponent === buttonName}
+              isActive={activeComponent === buttonName} // Verifica si este botón es el activo
             />
           ))}
         </div>
@@ -169,7 +181,6 @@ const App: React.FC = () => {
         )}
         {renderComponent()}
         <EthnicInfoViewer initialUrl={viewerUrl} status={referenceStatus} setReferenceStatus={handleSetReferenceStatus} />
-
       </div>
       <div className="footer-container">
         <p><strong>*Nota aclaratoria:</strong>La información presentada en este mapa interactivo ha sido extraída de textos, estudios y otras fuentes documentales. Esta información no debe considerarse como una única verdad ni refleja necesariamente las opiniones de los coordinadores, financiadores, colaboradores o participantes del proyecto. La interpretación de los datos puede variar y se recomienda consultar las fuentes originales para obtener una visión más completa.</p>

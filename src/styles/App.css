@@ -183,6 +183,7 @@ body::-webkit-scrollbar-button {
   }
 
   .button-container {
+    flex-direction: column; /* Coloca los botones en una columna */
     gap: 10px; /* Añade espacio entre los botones en columna */
   }
 
@@ -202,7 +203,8 @@ body::-webkit-scrollbar-button {
   }
 
   .button-container {
-    gap: 5px; /* Añade espacio entre los botones en columna */
+    flex-direction: column; /* Coloca los botones en una columna */
+    gap: 10px; /* Añade espacio entre los botones en columna */
   }
 
   .button-container button {
