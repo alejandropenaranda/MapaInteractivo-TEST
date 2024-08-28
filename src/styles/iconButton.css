@@ -5,7 +5,7 @@
     justify-content: center;
     width: 150px;
     height: 137px;
-    border: 3px solid #91AD2E;
+    border: 3px solid #96A743;
     border-radius: 10px;
     background-color: #ffffff;
     cursor: pointer;
@@ -15,7 +15,7 @@
   }
 
   .square-button.active {
-    background-color: #91AD2E;
+    background-color: #96A743;
     color: white;
   }
   
@@ -43,7 +43,7 @@
     width: 80%;
     font-size: 14px;
     font-weight: 700;
-    color: #91AD2E;
+    color: #96A743;
   }
 
   .text-container.active {

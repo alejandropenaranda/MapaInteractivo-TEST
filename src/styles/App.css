@@ -67,7 +67,7 @@ body::-webkit-scrollbar-button {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    background-color: #1D3C80;
+    background-color: #20427C;
     padding: 20px;
 }
 
@@ -115,7 +115,7 @@ body::-webkit-scrollbar-button {
     font-size: 30px;
     align-self: left;
     text-align: left;
-    color:#F0AF43;
+    color:#F39E46;
     padding-left: 0%;
     font-weight: 800;
     font-family: Lato;
@@ -148,16 +148,6 @@ body::-webkit-scrollbar-button {
     margin: 0px;
   }
   
-  .button-container button:hover {
-    background-color: #a1a1a1;
-  }
-
-  .button-container button.active {
-    background-color: #F39E46;
-    color: black;
-  }
-
-
   .icon-nombre-exgeno.active{
     width:  87px;
     height: 50px;

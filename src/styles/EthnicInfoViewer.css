@@ -21,7 +21,7 @@
     font-size: 30px;
     align-self: left;
     text-align: left;
-    color:#F0AF43;
+    color:#F39E46;
     font-weight: 800;
     font-family: Lato;
   }
@@ -33,7 +33,7 @@
     overflow: hidden;
     margin-bottom: 10px;
     position: relative;
-    border: 3px solid #1D3C80;
+    border: 3px solid #20427C;
   }
   
   .reference-iframe {
@@ -76,7 +76,7 @@
   .button-container-EIV button {
     font-family: "Lato", sans-serif;
     padding: 10px 20px;
-    background-color: #1D3C80;
+    background-color: #20427C;
     color: #FFFFFF;
     border: none;
     border-radius: 20px;
