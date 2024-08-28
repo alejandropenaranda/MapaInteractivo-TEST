@@ -33,7 +33,7 @@ const createClusterCustomIcon = function (cluster: any) {
 
 const EthnicInteractiveMap: React.FC<EthnicInteractiveMapProps> = ({ markers }) => {
   return (
-    <MapContainer center={[1.252302645176641, -70.23357464338513]} zoom={13} style={{ height: '100%', width: '100%' }}>
+    <MapContainer center={[0.39985118661025154, -70.60133169195446]} zoom={8} style={{ height: '100%', width: '100%' }}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
