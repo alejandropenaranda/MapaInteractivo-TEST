@@ -1,5 +1,5 @@
 import React from 'react';
-import "../styles/iconButton.css";
+import "../styles/IconButton.css";
 
 interface IconButtonProps {
   activeIcon: React.ReactNode;  

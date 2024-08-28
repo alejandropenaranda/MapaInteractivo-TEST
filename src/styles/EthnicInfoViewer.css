@@ -9,7 +9,8 @@
     align-items: center;
     padding-bottom: 10px;
     width: 100%;
-    height: 800px;
+    height: auto;
+    max-height: 800px;
   }
   
   .title-container {
@@ -29,11 +30,12 @@
   .iframe-container {
     border-radius: 10px;
     width: 100%;
-    height: 90%;
+    height: 720px;
     overflow: hidden;
     margin-bottom: 10px;
     position: relative;
     border: 3px solid #20427C;
+    max-height: 720px;
   }
   
   .reference-iframe {

@@ -44,7 +44,7 @@ const EthnicInfoDisplay: React.FC<EthnicInfoDisplayProps> = ({ content, link, se
       {content && <p>{content}</p>}
       <div className="button-container-EID">
         <div className="copy-message-container">
-          {copyMessageVisible && <span className="copy-message">!Se ha copiado correctamente!</span>}
+          {copyMessageVisible && <span className="copy-message">¡Se ha copiado correctamente!</span>}
           <button onClick={handleCopyClick}>
             Copiar
           </button>

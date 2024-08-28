@@ -157,10 +157,6 @@ const App: React.FC = () => {
 
   return (
     <div className="app-container">
-      <div className="header">
-        <img src='/title.png' alt="Título" />
-        <p>En el Vaupés se hablan veinticinco (25) lenguas: 15 de la familia Tucano Oriental, 5 de la familia Arawák, 2 de la familia Nadahup, 1 de la subfamilia Kakua-Nukak, 1 de la familia Caribe, 1 de la familia Tupí.</p>
-      </div>
       <div className="content-container">
         <DataLoader setData={setData} />
         <p>Actualizado hasta agosto de 2024*.</p>
