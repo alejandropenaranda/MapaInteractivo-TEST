@@ -150,6 +150,11 @@ const App: React.FC = () => {
     'Más info': { active: masInfo, inactive: masInfoI }
   }
 
+  const formatClassName = (name:string) => {
+    const formated = `icon-${name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}`
+    return formated;
+  };
+
   return (
     <div className="app-container">
       <div className="header">
@@ -164,14 +169,28 @@ const App: React.FC = () => {
           {['Nombre Exógeno', 'Nombre del pueblo', 'Nombre de la Lengua', 'Ubicación', 'Número de hablantes', 'Mitología', 'Más info'].map((buttonName) => (
             <IconButton
               key={buttonName}
+              activeIcon={<img src={buttonIcons[buttonName].active} alt="example" className={`${formatClassName(buttonName)} active`} />}
+              inactiveIcon={<img src={buttonIcons[buttonName].inactive} alt="example" className={`${formatClassName(buttonName)} active`} />}
+              // activeIcon={<img src={buttonIcons[buttonName].active} alt="Icon" className={`icon-${buttonName.replace(/\s+/g, '-').toLowerCase()}`} />}
+              // inactiveIcon={<img src={buttonIcons[buttonName].inactive} alt="Icon" className={`icon-${buttonName.replace(/\s+/g, '-').toLowerCase()}`} />}
+              text={buttonName}
+              onClick={() => setActiveComponent(buttonName)}
+              isActive={activeComponent === buttonName}
+            />
+          ))}
+        </div>
+        {/* <div className="button-container">
+          {['Nombre Exógeno', 'Nombre del pueblo', 'Nombre de la Lengua', 'Ubicación', 'Número de hablantes', 'Mitología', 'Más info'].map((buttonName) => (
+            <IconButton
+              key={buttonName}
               activeIcon={<img src={buttonIcons[buttonName].active} alt="example" />}// Reemplaza el emoji con tu icono preferido
               inactiveIcon={<img src={buttonIcons[buttonName].inactive} alt="example" />}
               text={buttonName}
               onClick={() => setActiveComponent(buttonName)}
               isActive={activeComponent === buttonName} // Verifica si este botón es el activo
-            />
+            />  
           ))}
-        </div>
+        </div> */}
         {selectedEthnicGroupData.some(item => item.coords) && (<>
           <h2>Mapa de ubicación según fuentes bibliográficas</h2>
           <div className="map-container">

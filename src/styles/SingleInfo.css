@@ -13,6 +13,7 @@
     height: 600px;
     gap: 10px;
     background-color: #91AD2E;
+    border: 3px solid #91AD2E;
   }
   
   .single-info h2 {

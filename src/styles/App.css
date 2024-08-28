@@ -157,6 +157,49 @@ body::-webkit-scrollbar-button {
     color: black;
   }
 
+
+  .icon-nombre-exgeno.active{
+    width:  87px;
+    height: 50px;
+    transition: filter 0.3s;
+  }
+  
+  .icon-nombre-del-pueblo.active{
+    width:  83px;
+    height: 57px;
+    transition: filter 0.3s;
+  }
+  
+  .icon-nombre-de-la-lengua.active{
+    width:  72px;
+    height: 59px;
+    transition: filter 0.3s;
+  }
+  
+  .icon-ubicacin.active{
+    width:  70px;
+    height: 62 px;
+    transition: filter 0.3s;
+  }
+  
+  .icon-nmero-de-hablantes.active{
+    width:  67px;
+    height: 62px;
+    transition: filter 0.3s;
+  }
+  
+  .icon-mitologa.active{
+    width:  69px;
+    height: 63 px;
+    transition: filter 0.3s;
+  }
+  
+  .icon-ms-info.active{
+    width:  60px;
+    height: 55px;
+    transition: filter 0.3s;
+  }
+
 /* Media Queries para diferentes tamaños de pantalla */
 
 @media (max-width: 1150px) {
@@ -187,6 +230,33 @@ body::-webkit-scrollbar-button {
     gap: 10px; /* Añade espacio entre los botones en columna */
   }
 
+  .icon-nombre-exgeno.active{
+    width:  50px;
+  }
+  
+  .icon-nombre-del-pueblo.active{
+    width:  50px;
+  }
+  
+  .icon-nombre-de-la-lengua.active{
+    width:  50px;
+  }
+  
+  .icon-ubicacin.active{
+    width:  50px;
+  }
+  
+  .icon-nmero-de-hablantes.active{
+    width:  40px;
+  }
+  
+  .icon-mitologa.active{
+    width:  45px;
+  }
+  
+  .icon-ms-info.active{
+    width:  45px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -211,3 +281,4 @@ body::-webkit-scrollbar-button {
     width: 100%; /* Asegura que los botones ocupen todo el ancho en pantallas pequeñas */
   }
 }
+
