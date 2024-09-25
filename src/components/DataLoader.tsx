@@ -10,7 +10,7 @@ interface EthnicGroup {
   mitologia?: string;
   comentarios?: string;
   ubicaciones?: string;
-  coords?: string;
+  coords?: [number, number][];
   linkMapa?: string;
   enlace1?: string;
   enlace2?: string;
@@ -41,7 +41,18 @@ const DataLoader: React.FC<DataLoaderProps> = ({ setData }) => {
           const result: any = {};
           for (const key in keyMap) {
             if (row[key]) {
-              result[keyMap[key]] = row[key];
+              if (key === 'Coords') {
+                // Transformar las coordenadas separadas por "|" en un array de tuplas
+                result[keyMap[key]] = row[key]
+                  .split('|')  // Divide por el delimitador |
+                  .map((coordSet: string) => coordSet.trim())  // Elimina espacios
+                  .map((coordSet: string) => {
+                    const coords = coordSet.split(',').map((c: string) => parseFloat(c.trim()));
+                    return [coords[0], coords[1]];  // Retorna el par como una tupla [lat, long]
+                  });
+              } else {
+                result[keyMap[key]] = row[key];
+              }
             }
           }
           return result;

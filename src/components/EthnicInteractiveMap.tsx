@@ -6,7 +6,6 @@ import '../styles/EthnicInteractiveMap.css';
 import 'leaflet/dist/leaflet.css';
 import icono from '../assets/placeholder.png';
 
-// Define the type for the marker data
 interface MarkerData {
   geocode: LatLngExpression;
   popUp: string;
@@ -39,7 +38,7 @@ const EthnicInteractiveMap: React.FC<EthnicInteractiveMapProps> = ({ markers }) 
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <ZoomControl position='topright'/>
-      <MarkerClusterGroup chunkedLoading iconCreateFunction={createClusterCustomIcon}>
+      <MarkerClusterGroup chunkedLoading iconCreateFunction={createClusterCustomIcon} maxClusterRadius={55}>
         {markers.map((marker, idx) => (
           <Marker key={idx} position={marker.geocode} icon={customIcon}>
             <Popup>{marker.popUp}</Popup>

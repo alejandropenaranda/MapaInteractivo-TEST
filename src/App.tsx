@@ -31,7 +31,7 @@ interface EthnicGroup {
   mitologia?: string;
   comentarios?: string;
   ubicaciones?: string;
-  coords?: string;
+  coords?: [number, number][];
   linkMapa?: string;
   enlace1?: string;
   enlace2?: string;
@@ -40,6 +40,7 @@ interface EthnicGroup {
   enlace5?: string;
   enlace6?: string;
   enlace7?: string;
+  [key: string]: any;
 }
 
 const App: React.FC = () => {
@@ -63,18 +64,16 @@ const App: React.FC = () => {
   };
 
   const markersData = selectedEthnicGroupData
-    .map(item => {
-      const coordsArray = item.coords ? item.coords.split(',').map(Number) : [];
-      if (coordsArray.length === 2) {
-        const geocode: LatLngTuple = [coordsArray[0], coordsArray[1]];
-        return {
-          geocode,
-          popUp: item.ubicaciones ?? ''
-        };
-      }
-      return null;
-    })
-    .filter(marker => marker !== null);
+  .flatMap(item => {
+    if (item.coords && item.coords.length > 0) {
+      return item.coords.map((coordTuple) => ({
+        geocode: coordTuple as LatLngTuple,
+        popUp: item.ubicaciones ?? ''
+      }));
+    }
+    return [];
+  })
+  .filter(marker => marker.geocode && marker.popUp);
 
   const renderComponent = () => {
     switch (activeComponent) {
