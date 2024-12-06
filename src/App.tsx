@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from 'react';
 import DataLoader from './components/DataLoader';
 import EthnicSelector from './components/EthnicSelector';
@@ -91,7 +92,7 @@ const App: React.FC = () => {
           enlace: item.enlace2 ?? '',
           setViewerUrl: handleSetViewerUrl,
           setReferenceStatus: handleSetReferenceStatus,
-        }))} texto="¿Cuál es el nombre autóctono del pueblo?" />;
+        }))} texto="¿Cómo se autodenomina el pueblo?" />;
 
       case 'Nombre de la Lengua':
         return <ShowData data={selectedEthnicGroupData.map(item => ({
@@ -172,7 +173,7 @@ const App: React.FC = () => {
             />
           ))}
         </div>
-        {selectedEthnicGroupData.some(item => item.coords) && (<>
+        {selectedEthnicGroupData.some(item => item.coords) && activeComponent === 'Ubicación' && (<>
           <h2>Mapa de ubicación según fuentes bibliográficas</h2>
           <div className="map-container">
             <EthnicInteractiveMap markers={markersData} />
