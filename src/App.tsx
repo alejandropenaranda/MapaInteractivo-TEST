@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import DataLoader from './components/DataLoader';
 import EthnicSelector from './components/EthnicSelector';
 import EthnicInfoViewer from './components/EthnicInfoViewer';
-import EthnicInteractiveMap from './components/EthnicInteractiveMap';
+// import EthnicInteractiveMap from './components/EthnicInteractiveMap';
 import ShowData from './components/ShowData';
 import IconButton from './components/IconButton';
 import './styles/App.css';
@@ -162,7 +162,8 @@ const App: React.FC = () => {
         <p>Actualizado hasta agosto de 2024*.</p>
         <EthnicSelector data={Object.keys(data)} setSelectedEthnicGroup={setSelectedEthnicGroup} />
         <div className="button-container">
-          {['Nombre Exógeno', 'Nombre del pueblo', 'Nombre de la Lengua', 'Ubicación', 'Número de hablantes', 'Mitología', 'Más info'].map((buttonName) => (
+          {/* {['Nombre Exógeno', 'Nombre del pueblo', 'Nombre de la Lengua', 'Ubicación', 'Número de hablantes', 'Mitología', 'Más info'].map((buttonName) => ( */}
+          {['Nombre Exógeno', 'Nombre del pueblo', 'Nombre de la Lengua', 'Número de hablantes', 'Mitología', 'Más info'].map((buttonName) => (
             <IconButton
               key={buttonName}
               activeIcon={<img src={buttonIcons[buttonName].active} alt="example" className={`${formatClassName(buttonName)} active`} />}
@@ -173,18 +174,20 @@ const App: React.FC = () => {
             />
           ))}
         </div>
-        {selectedEthnicGroupData.some(item => item.coords) && activeComponent === 'Ubicación' && (<>
+        {/* {selectedEthnicGroupData.some(item => item.coords) && activeComponent === 'Ubicación' && (<>
           <h2>Mapa de ubicación según fuentes bibliográficas</h2>
           <div className="map-container">
             <EthnicInteractiveMap markers={markersData} />
           </div>
         </>
-        )}
+        )} */}
         {renderComponent()}
         <EthnicInfoViewer initialUrl={viewerUrl} status={referenceStatus} setReferenceStatus={handleSetReferenceStatus} />
       </div>
       <div className="footer-container">
-        <p><strong>*Nota aclaratoria:</strong>La información presentada en este mapa interactivo ha sido extraída de textos, estudios y otras fuentes documentales. Esta información no debe considerarse como una única verdad ni refleja necesariamente las opiniones de los coordinadores, financiadores, colaboradores o participantes del proyecto. La interpretación de los datos puede variar y se recomienda consultar las fuentes originales para obtener una visión más completa.</p>
+        {/* <p><strong>*Nota aclaratoria:</strong>La información presentada en este mapa interactivo ha sido extraída de textos, estudios y otras fuentes documentales. Esta información no debe considerarse como una única verdad ni refleja necesariamente las opiniones de los coordinadores, financiadores, colaboradores o participantes del proyecto. La interpretación de los datos puede variar y se recomienda consultar las fuentes originales para obtener una visión más completa.</p> */}
+        <p><strong>*Nota aclaratoria:</strong>La información presentada en este tablero de consulta ha sido extraída de textos, estudios y otras fuentes documentales. Esta información no debe considerarse como una única verdad ni refleja necesariamente las opiniones de los coordinadores, financiadores, colaboradores o participantes del proyecto. La interpretación de los datos puede variar y se recomienda consultar las fuentes originales para obtener una visión más completa.</p>
+      
       </div>
     </div>
   );
