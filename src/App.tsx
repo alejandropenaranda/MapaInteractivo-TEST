@@ -7,7 +7,7 @@ import EthnicInfoViewer from './components/EthnicInfoViewer';
 import ShowData from './components/ShowData';
 import IconButton from './components/IconButton';
 import './styles/App.css';
-import { LatLngTuple } from 'leaflet';
+// import { LatLngTuple } from 'leaflet';
 import masInfo from './assets/icons/MásInfoActive.svg'
 import masInfoI from './assets/icons/MásInfoInactive.svg'
 import nombreEx from './assets/icons/NombreExoActive.svg'
@@ -64,17 +64,17 @@ const App: React.FC = () => {
     }
   };
 
-  const markersData = selectedEthnicGroupData
-  .flatMap(item => {
-    if (item.coords && item.coords.length > 0) {
-      return item.coords.map((coordTuple) => ({
-        geocode: coordTuple as LatLngTuple,
-        popUp: item.ubicaciones ?? ''
-      }));
-    }
-    return [];
-  })
-  .filter(marker => marker.geocode && marker.popUp);
+  // const markersData = selectedEthnicGroupData
+  // .flatMap(item => {
+  //   if (item.coords && item.coords.length > 0) {
+  //     return item.coords.map((coordTuple) => ({
+  //       geocode: coordTuple as LatLngTuple,
+  //       popUp: item.ubicaciones ?? ''
+  //     }));
+  //   }
+  //   return [];
+  // })
+  // .filter(marker => marker.geocode && marker.popUp);
 
   const renderComponent = () => {
     switch (activeComponent) {
